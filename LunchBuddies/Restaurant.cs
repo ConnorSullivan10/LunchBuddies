@@ -7,19 +7,15 @@ namespace LunchBuddies
     class Restaurant
     {
         public string Name { get; set; } = "";
-        private List<string> Restaurants { get; } = new List<string>();
+        private List<string> _restaurants { get; } = new List<string> { "Applebees", "Ruths Chris", "BJs Hot Chicken"};
 
-        public Restaurant(List<string> Restaurants)
+        public Restaurant()
         {
             var random = new Random();
-            int index = random.Next(Restaurants.Count);
-            string randString = Restaurants[index];
+            int index = random.Next(_restaurants.Count);
+            string randString = _restaurants[index];
             Name = randString;
         }
 
-        public void eat()
-        {
-
-        }
     }
 }
